@@ -1,0 +1,113 @@
+@import "../../scss/mixins";
+
+.Component {
+  &__right, &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-left: 2px solid var(--color-grey-light);
+    @include respond(phone) {
+      display: contents;
+    }
+  }
+
+  &__header-text {
+    margin-top: var(--spacing-80);
+    margin-bottom: var(--spacing-100);
+    grid-area: header-text;
+    @include respond(phone) {
+      margin-top: var(--spacing-0);
+    }
+  }
+
+  &__logo-box {
+    margin-top: var(--spacing-80);
+    margin-bottom: var(--spacing-50);
+    @include respond(phone) {
+      margin-top: var(--spacing-30);
+    }
+    h1 {
+      margin: 0;
+      padding: 0;
+    }
+    .Text__extraLarge {
+      margin-left: -8px;
+      color: var(--color-black-1);
+      @include respond(phone) {
+        margin-top: 0;
+        margin-left: 0;
+        font-size: 72px;
+        margin-bottom: var(--spacing-50);
+      }
+    }
+  }
+  &__logo-square {
+    width: 13px;
+    height: 13px;
+    margin-bottom: var(--spacing-15);
+    margin-left: -8px;
+    background: var(--color-red);
+
+    @include respond(phone) {
+      margin-left: var(--spacing-0);
+    }
+  }
+
+  &__rectangle {
+    width: 7px;
+    height: 50px;
+    margin-left: -5px;
+    margin-bottom: var(--spacing-30);
+    background: var(--color-black);
+    @include respond(phone) {
+      display: none;
+      margin-left: var(--spacing-0);
+    }
+  }
+  &__text {
+    position: relative;
+    margin-left: -5px;
+    line-height: 14px;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+    }
+
+    @include respond(phone) {
+      margin-bottom: 50px;
+      font-size: 30px;
+      line-height: 30px;
+      margin-left: 0;
+    }
+
+    &:after {
+      content: '';
+      margin-top: 30px;
+      position: absolute;
+      left: -1px;
+      bottom: -40%;
+      width: 11px;
+      height: 3px;
+      background: var(--color-red);
+
+      @include respond(phone) {
+        width: 50px;
+        height: 12px;
+        bottom: -35%;
+      }
+    }
+  }
+
+  &__footer-text, &__header-text {
+    margin-left: -8px;
+    span {
+      display: block;
+    }
+    @include respond(phone) {
+      margin-left: 0;
+      font-size: 46px;
+      line-height: 35px;
+    }
+  }
+}

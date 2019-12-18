@@ -1,0 +1,57 @@
+@import "../../scss/mixins";
+
+.PRT03 {
+  width: 100%;
+  padding: 90px 0;
+  overflow: hidden;
+  background: url('../../img/bogu_picture.png') no-repeat 50% 50%;
+
+  &__parameters {
+    height: 100%;
+    margin-top: var(--spacing-80);
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    @include respond(tab-port) {
+      justify-content: space-between;
+    }
+    @include respond(phone) {
+      display: block;
+    }
+  }
+
+  &__parameters-position {
+    margin-left: var(--spacing-60);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div {
+      margin-bottom: var(--spacing-60);
+    }
+  }
+
+  .Text {
+    &__large {
+      span {
+        display: block;
+      }
+    }
+    &__extraMedium {
+      span {
+        color: var(--color-grey-2-2);
+      }
+    }
+
+    &__small {
+      color: var(--color-red-1);
+    }
+
+    &__bigSmall {
+      span {
+        color: var(--color-grey-2-2)
+      }
+    }
+  }
+}

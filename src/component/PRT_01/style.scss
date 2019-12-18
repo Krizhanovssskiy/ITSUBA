@@ -1,0 +1,75 @@
+@import "../../scss/mixins";
+
+.PRT01 {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-image: url("../../img/photo_2017-11-08_22-05-50 копия.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  overflow: hidden;
+
+  @include respond(phone) {
+    height: 100%;
+    background-position: 188% 50%;
+  }
+  &:before,  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: var(--color-background-opasity);
+  }
+  &:before {
+    left: 0;
+    right: 56%;
+    box-shadow: inset -50px 0px 20px -25px var(--color-box-shadow);
+    @include respond(phone) {
+      right: 0;
+      box-shadow: none;
+    }
+  }
+  &:after {
+    right: 0;
+    left: 56%;
+    box-shadow: inset 50px 0 50px -25px var(--color-box-shadow);
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+
+  .Form {
+    grid-area: form;
+  }
+  .Component__text {
+    grid-area: text;
+  }
+  .Component__logo-box {
+    grid-area: logo;
+  }
+
+  .Component__rectangle {
+    grid-area: rectangle;
+  }
+  .Component__footer-text {
+    grid-area: footer-text;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    @include respond(phone) {
+      padding: 50px 15px;
+      grid-template-columns: 2fr;
+      grid-template-areas:
+        "logo "
+        "header-text"
+        "text"
+        "form";
+    }
+  }
+}

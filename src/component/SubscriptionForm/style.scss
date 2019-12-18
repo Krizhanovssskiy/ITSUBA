@@ -1,0 +1,66 @@
+@import "../../scss/mixins";
+
+.Form {
+  max-width: 250px;
+  min-width: 150px;
+  width: 100%;
+  margin-left: var(--spacing-50);
+  margin-bottom: var(--spacing-30);
+  text-align: center;
+
+  @include respond(tab-port) {
+    margin-left: var(--spacing-5);
+  }
+
+  @include respond(phone) {
+    margin: var(--spacing-30) auto ;
+
+    max-width: 600px;
+    min-width: 150px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--spacing-15);
+    padding: 10px 5px;
+    text-align: center;
+    border: 2px solid var(--color-grey-4);
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    color: var(--color-grey-1);
+    background: transparent;
+    outline: none;
+    &:hover {
+      border: 2px solid var(--color-grey-1);
+    }
+
+    &:focus {
+      border-color: var(--color-grey-1);
+    }
+    @include respond(phone) {
+      max-height: 80px;
+      height: 100%;
+      font-size: 24px;
+      text-transform: lowercase;
+    }
+  }
+
+  &__btn-submit {
+    width: 180px;
+    margin-top: var(--spacing-30);
+    padding: 10px 5px;
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    background: var(--color-white);
+    border: 1px solid transparent;
+    box-shadow: 0 15px 15px var(--color-grey-2-1);
+    outline: none;
+    &:hover {
+      box-shadow: 0 15px 15px var(--color-black-2);
+    }
+    @include respond(phone) {
+      font-size: 22px;
+    }
+  }
+}
