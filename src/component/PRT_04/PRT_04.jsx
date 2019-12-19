@@ -1,8 +1,8 @@
 import './style.scss';
 
 import React from 'react';
-import ListItem from './ListItem';
-import CustomSlider from "./CustomSlider";
+import ListItem from '../ListItem/ListItem';
+import CustomSlider from '../CustomSlider';
 
 const PRT_04 = ({shareDataList}) => {
 

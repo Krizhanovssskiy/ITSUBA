@@ -1,3 +1,5 @@
+import './style.scss';
+
 import React, { Component } from 'react';
 import Slider from 'infinite-react-carousel';
 import { connect } from 'react-redux';
@@ -13,17 +15,15 @@ class CustomSlider extends Component {
     };
     const { carousel } = this.props;
     return (
-      <div className='PRT04__carousel'>
-        <Slider { ...settings }>
+        <Slider  className='Carousel' { ...settings }>
             {
               carousel.map(item => (
-                <div key={item.id}>
+                <div key={item.id} className='Carousel__item'>
                   <img src={item.urlImg} alt=""/>
                 </div>)
               )
             }
         </Slider>
-      </div>
     );
   }
 }

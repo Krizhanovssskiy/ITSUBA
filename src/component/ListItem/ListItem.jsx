@@ -1,10 +1,12 @@
+import './style.scss';
+
 import React from 'react';
 import { connect } from 'react-redux';
 
 const ListItem = ({shareDataList}) => {
 
   return (
-    <ul className="PRT04__list">
+    <ul className="ListItem">
       {
         shareDataList.map((item, idx) => {
           return (
